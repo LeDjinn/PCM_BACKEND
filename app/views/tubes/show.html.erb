@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tube %>
+
+<div>
+  <%= link_to "Edit this tube", edit_tube_path(@tube) %> |
+  <%= link_to "Back to tubes", tubes_path %>
+
+  <%= button_to "Destroy this tube", @tube, method: :delete %>
+</div>

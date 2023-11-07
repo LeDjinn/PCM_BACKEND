@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Losses</h1>
+
+<div id="losses">
+  <% @losses.each do |loss| %>
+    <%= render loss %>
+    <p>
+      <%= link_to "Show this loss", loss %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New loss", new_loss_path %>

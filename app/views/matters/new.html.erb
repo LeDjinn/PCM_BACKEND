@@ -1,0 +1,14 @@
+<h1>New matter</h1>
+
+<%= render "form", matter: @matter %>
+
+<br>
+
+<div>
+  <%= link_to "Back to matters", matters_path %>
+</div>
+<h3> Importez les fichiers en format csv avec en-tete </h3>
+   <%= form_with url: import_matters_path , method: :post do |f| %>
+      <%=f.file_field :file, accept: '.csv' %>
+      <%= f.submit 'Import' %>
+    <%end%>

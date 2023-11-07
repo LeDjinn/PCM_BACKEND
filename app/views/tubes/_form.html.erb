@@ -1,0 +1,102 @@
+<%= form_with(model: tube) do |form| %>
+  <% if tube.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tube.errors.count, "error") %> prohibited this tube from being saved:</h2>
+
+      <ul>
+        <% tube.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :country, style: "display: block" %>
+   <%= form.select :country, ['export', 'local'] %>
+  </div>
+
+  <div>
+    <%= form.label :pressure, style: "display: block" %>
+    <%= form.number_field :pressure %>
+  </div>
+
+  <div>
+    <%= form.label :mat, style: "display: block" %>
+    <%= form.text_field :mat, value: "SVR" %>
+  </div>
+
+  <div>
+    <%= form.label :type_piece, style: "display: block" %>
+    <%= form.select :type_piece, ['TUBE ORTHO', 'TUBE HELI'] %>
+  </div>
+
+  <div>
+    <%= form.label :dn, style: "display: block" %>
+    <%= form.number_field :dn %>
+  </div>
+
+  <div>
+    <%= form.label :ac, style: "display: block" %>
+    <%= form.text_field :ac %>
+  </div>
+
+  <div>
+    <%= form.label :rm, style: "display: block" %>
+    <%= form.text_field :rm %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :price_mo, style: "display: block" %>
+    <%= form.number_field :price_mo %>
+  </div>
+
+  <div>
+    <%= form.label :voile_ac, style: "display: block" %>
+    <%= form.select :voile_ac,["1777 lg 50 MM","1773 lg 50 MM"] %>
+  </div>
+
+  <div>
+    <%= form.label :barear_ac, style: "display: block" %>
+    <%= form.select :barear_ac,[ "RESINE EQUIVALENTE 470", "RESINE EQUIVALENTE 411", "RESINE PISCINE", "RESINE DK MOMENTUM 411-350", "RESINE ISOPHTALIQUE", "RESINE ACCROCHAGE PVC", "RESINE DK 470-300" ] %>
+  </div>
+
+  <div>
+    <%= form.label :charge_ac, style: "display: block" %>
+    <%= form.select :charge_ac , ["AUCUN","CHARGE ANTI ABRASION","autre charge"]%>
+  </div>
+
+  <div>
+    <%= form.label :resine_rm, style: "display: block" %>
+    <%= form.select :resine_rm,[ "RESINE EQUIVALENTE 470", "RESINE EQUIVALENTE 411", "RESINE PISCINE", "RESINE DK MOMENTUM 411-350", "RESINE ISOPHTALIQUE", "RESINE ACCROCHAGE PVC", "RESINE DK 470-300" ] %>
+  </div>
+
+  <div>
+    <%= form.label :charge_rm, style: "display: block" %>
+    <%= form.select :charge_rm, ["AUCUN", "ANTI UV 326", "AEROSIL"] %>
+  </div>
+
+  <div>
+    <%= form.label :color, style: "display: block" %>
+    <%= form.select :color, ["AUCUN", "PATE COLORANTE", "AUTRE COULEUR"] %>
+  </div>
+
+  <div>
+    <%= form.label :number_voile_ac, style: "display: block" %>
+    <%= form.number_field :number_voile_ac %>
+  </div>
+    <div>
+    <%= form.label :quotation_id, style: "display: block" %>
+    <%= form.number_field :quotation_id %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

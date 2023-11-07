@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tubes</h1>
+
+<div id="tubes">
+  <% @tubes.each do |tube| %>
+    <%= render tube %>
+    <p>
+      <%= link_to "Show this tube", tube %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tube", new_tube_path %>

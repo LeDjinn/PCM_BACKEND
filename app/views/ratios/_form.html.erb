@@ -1,0 +1,37 @@
+<%= form_with(model: ratio) do |form| %>
+  <% if ratio.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ratio.errors.count, "error") %> prohibited this ratio from being saved:</h2>
+
+      <ul>
+        <% ratio.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :dn, style: "display: block" %>
+    <%= form.number_field :dn %>
+  </div>
+
+  <div>
+    <%= form.label :tps_demandrinage, style: "display: block" %>
+    <%= form.text_field :tps_demandrinage %>
+  </div>
+
+  <div>
+    <%= form.label :ratio_ac, style: "display: block" %>
+    <%= form.text_field :ratio_ac %>
+  </div>
+
+  <div>
+    <%= form.label :ratio_rm, style: "display: block" %>
+    <%= form.text_field :ratio_rm %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<%= form_with(model: loss) do |form| %>
+  <% if loss.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(loss.errors.count, "error") %> prohibited this loss from being saved:</h2>
+
+      <ul>
+        <% loss.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :dn, style: "display: block" %>
+    <%= form.number_field :dn %>
+  </div>
+
+  <div>
+    <%= form.label :lenght_useful, style: "display: block" %>
+    <%= form.text_field :lenght_useful %>
+  </div>
+
+  <div>
+    <%= form.label :loss_orhto, style: "display: block" %>
+    <%= form.text_field :loss_orhto %>
+  </div>
+
+  <div>
+    <%= form.label :loss_helico, style: "display: block" %>
+    <%= form.text_field :loss_helico %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

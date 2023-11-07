@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ratios</h1>
+
+<div id="ratios">
+  <% @ratios.each do |ratio| %>
+    <%= render ratio %>
+    <p>
+      <%= link_to "Show this ratio", ratio %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ratio", new_ratio_path %>

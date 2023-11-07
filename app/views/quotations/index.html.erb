@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Quotations</h1>
+
+<div id="quotations">
+  <% @quotations.each do |quotation| %>
+    <%= render quotation %>
+    <p>
+      <%= link_to "Show this quotation", quotation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New quotation", new_quotation_path %>

@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Matters</h1>
+<%= link_to "New matter", new_matter_path %>
+<table class="container">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price local</th>
+      <th>Price export</th>
+      <th>category</th>
+       <th>actions </th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <% @matters.each do |matter| %>
+    <%= render matter %>
+ 
+  <% end %>
+
+  </tbody>
+</table>
+
+

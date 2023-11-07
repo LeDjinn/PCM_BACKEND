@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ratio %>
+
+<div>
+  <%= link_to "Edit this ratio", edit_ratio_path(@ratio) %> |
+  <%= link_to "Back to ratios", ratios_path %>
+
+  <%= button_to "Destroy this ratio", @ratio, method: :delete %>
+</div>
